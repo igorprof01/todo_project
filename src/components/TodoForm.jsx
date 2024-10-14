@@ -20,7 +20,6 @@ const TodoForm = () => {
             })
             setMessage("Tarefa criada com sucesso!")
             setTarefa('')
-            setDescricao()
         } catch (error) {
             setMessage("Não foi possível salvar a sua tarefa!")
         }
@@ -28,7 +27,7 @@ const TodoForm = () => {
 
   return (
     <Form onSubmit={handlePost}>
-      <Form.Group className="mb-3">
+      <Form.Group className="mb-3" controlId='tarefa'>
         <Form.Label>Título</Form.Label>
         <Form.Control 
             type="text" 
@@ -38,7 +37,7 @@ const TodoForm = () => {
             required />
       </Form.Group>
 
-      <Form.Group className="mb-3">
+      <Form.Group className="mb-3" controlId='descricao'>
         <Form.Label>Descrição</Form.Label>
         <Form.Control 
             type="textarea" 
